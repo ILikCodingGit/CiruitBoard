@@ -1,7 +1,6 @@
 import { Game } from './Game.js';
 
-async function loadJSON(path) 
-{
+async function loadJSON(path) {
   const r = await fetch(path);
   if (!r.ok) throw new Error(`Failed to load ${path}`);
   return r.json();

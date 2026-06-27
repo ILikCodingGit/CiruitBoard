@@ -81,20 +81,13 @@ export class Enemy {
       ctx.beginPath();
       ctx.rect(-s, -s, s * 2, s * 2);
     } else if (shape === 'hexagon') {
-      ctx.beginPath();
-
       for (let i = 0; i < 6; i++) {
         const a = (i / 6) * Math.PI * 2;
-
-        if (i === 0)
-          ctx.moveTo(Math.cos(a) * s, Math.sin(a) * s);
-        else
-          ctx.lineTo(Math.cos(a) * s, Math.sin(a) * s);
+        i === 0 ? ctx.beginPath(), ctx.moveTo(Math.cos(a) * s, Math.sin(a) * s)
+                : ctx.lineTo(Math.cos(a) * s, Math.sin(a) * s);
       }
-
       ctx.closePath();
-    }
-    else if (shape === 'star') {
+    } else if (shape === 'star') {
       ctx.rotate(this.phase * 0.4);
       ctx.beginPath();
       for (let i = 0; i < 8; i++) {

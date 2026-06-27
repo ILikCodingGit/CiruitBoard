@@ -50,6 +50,8 @@ export class Game {
     this.hand = [];
     this.selectedCard = 0;
 
+    this.toasts = []; // { title, body, color, life, maxLife }
+
     this.lastTime = null;
 
     this.resize();
@@ -117,6 +119,7 @@ export class Game {
       this.hand.splice(this.selectedCard, 1);
       this.selectedCard = Math.min(this.selectedCard, this.hand.length - 1);
       this.powerNetwork.rebuild(this.buildings);
+      this.showToast(`🔧 ${def.name} placed`, def.description || '', def.color || '#00ff88');
     }
   }
 
@@ -153,13 +156,29 @@ export class Game {
     }
   }
 
+  showToast(title, body, color = '#00ffcc') {
+    this.toasts.push({ title, body, color, life: 3.5, maxLife: 3.5 });
+    if (this.toasts.length > 4) this.toasts.shift();
+  }
+
   applyUpgrade(choice) {
     if (choice.type === 'weapon') {
+      const existing = this.player.weapons.find(w => w.data.id === choice.data.id);
       this.player.addWeapon(choice.data.id);
+      if (existing) {
+        this.showToast(`↑ ${choice.data.name} LV${existing.level}`, 'Upgraded: +20% damage, +10% fire rate', '#00ffff');
+      } else {
+        this.showToast(`⚡ ${choice.data.name}`, choice.data.description || 'New weapon acquired.', '#00ffff');
+      }
     } else if (choice.type === 'passive') {
       this.player.applyPassive(choice.data);
+      this.showToast(`▲ ${choice.data.name}`, choice.data.description || 'Passive applied.', '#88ff00');
     } else if (choice.type === 'pack') {
       for (const card of choice.data.cards) this.hand.push(card);
+      const cardNames = choice.data.cards
+        .map(id => { const d = this.data.buildings.find(b => b.id === id); return d ? d.name : id; })
+        .join(', ');
+      this.showToast(`📦 ${choice.data.name}`, `Added to hand: ${cardNames}`, '#ffaa00');
     }
   }
 
@@ -265,6 +284,8 @@ export class Game {
     this.projectiles = this.projectiles.filter(p => !p.dead);
     this.buildings = this.buildings.filter(b => !b.dead);
     this.particles = this.particles.filter(p => p.life > 0);
+    this.toasts = this.toasts.filter(t => t.life > 0);
+    for (const t of this.toasts) t.life -= dt;
 
     if (this.player.dead) {
       this.state = 'gameover';
@@ -317,9 +338,59 @@ export class Game {
     ctx.restore();
 
     this.drawHUD();
+    this.drawToasts();
 
     if (this.state === 'upgrade') this.drawUpgradeScreen();
     if (this.state === 'gameover') this.drawGameOver();
+  }
+
+  drawToasts() {
+    const ctx = this.ctx;
+    const W = this.canvas.width;
+    const toastW = 320, toastH = 56, toastX = W - toastW - 16;
+    let toastY = this.canvas.height - 80;
+
+    for (let i = this.toasts.length - 1; i >= 0; i--) {
+      const t = this.toasts[i];
+      const fade = Math.min(1, t.life / 0.4) * Math.min(1, (t.maxLife - t.life + 0.4) / 0.4);
+
+      ctx.save();
+      ctx.globalAlpha = fade;
+
+      // Slide in from right
+      const slideX = toastX + (1 - Math.min(1, (t.maxLife - t.life) / 0.25)) * 80;
+
+      ctx.fillStyle = 'rgba(0,0,0,0.88)';
+      ctx.shadowBlur = 16;
+      ctx.shadowColor = t.color;
+      ctx.fillRect(slideX, toastY, toastW, toastH);
+
+      // Left accent bar
+      ctx.fillStyle = t.color;
+      ctx.fillRect(slideX, toastY, 4, toastH);
+
+      // Title
+      ctx.fillStyle = t.color;
+      ctx.font = 'bold 13px monospace';
+      ctx.textAlign = 'left';
+      ctx.shadowBlur = 8;
+      ctx.fillText(t.title, slideX + 14, toastY + 20);
+
+      // Body
+      ctx.fillStyle = 'rgba(200,255,230,0.75)';
+      ctx.font = '11px monospace';
+      ctx.shadowBlur = 0;
+      // Truncate long bodies
+      let body = t.body;
+      if (ctx.measureText(body).width > toastW - 24) {
+        while (body.length > 0 && ctx.measureText(body + '…').width > toastW - 24) body = body.slice(0, -1);
+        body += '…';
+      }
+      ctx.fillText(body, slideX + 14, toastY + 38);
+
+      ctx.restore();
+      toastY -= toastH + 6;
+    }
   }
 
   drawHUD() {
@@ -403,6 +474,29 @@ export class Game {
         ctx.font = '14px monospace';
         ctx.textAlign = 'center';
         ctx.fillText('No cards in hand', W / 2, this.canvas.height - 40);
+      } else {
+        // Show description of selected card above hand
+        const selCard = this.hand[this.selectedCard];
+        const selDef = selCard && this.data.buildings.find(b => b.id === selCard);
+        if (selDef) {
+          const tipW = 360, tipH = 42;
+          const tipX = W / 2 - tipW / 2;
+          const tipY = this.canvas.height - 110;
+          ctx.fillStyle = 'rgba(0,0,0,0.85)';
+          ctx.fillRect(tipX, tipY, tipW, tipH);
+          ctx.strokeStyle = selDef.color;
+          ctx.lineWidth = 1.5;
+          ctx.strokeRect(tipX, tipY, tipW, tipH);
+          ctx.fillStyle = selDef.color;
+          ctx.font = 'bold 12px monospace';
+          ctx.textAlign = 'center';
+          ctx.shadowBlur = 8; ctx.shadowColor = selDef.color;
+          ctx.fillText(selDef.name, W / 2, tipY + 16);
+          ctx.fillStyle = 'rgba(200,255,230,0.8)';
+          ctx.font = '11px monospace';
+          ctx.shadowBlur = 0;
+          ctx.fillText(selDef.description || '', W / 2, tipY + 32);
+        }
       }
     } else {
       ctx.fillStyle = 'rgba(0,255,136,0.5)';
