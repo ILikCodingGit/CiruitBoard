@@ -1,18 +1,49 @@
 [
-  { "time": 0, "enemy": "virus", "count": 5, "interval": 1.5 },
-  { "time": 15, "enemy": "corrupted_packet", "count": 8, "interval": 0.8 },
-  { "time": 30, "enemy": "malware", "count": 4, "interval": 2 },
-  { "time": 45, "enemy": "virus", "count": 12, "interval": 0.8 },
-  { "time": 60, "enemy": "splitter_virus", "count": 5, "interval": 2 },
-  { "time": 75, "enemy": "malware", "count": 8, "interval": 1 },
-  { "time": 90, "enemy": "tank_virus", "count": 3, "interval": 3 },
-  { "time": 105, "enemy": "emp_virus", "count": 4, "interval": 2.5 },
-  { "time": 120, "enemy": "virus", "count": 20, "interval": 0.5 },
-  { "time": 135, "enemy": "tank_virus", "count": 6, "interval": 2 },
-  { "time": 150, "enemy": "splitter_virus", "count": 10, "interval": 1 },
-  { "time": 180, "enemy": "boss_kernel", "count": 1, "interval": 5 },
-  { "time": 200, "enemy": "corrupted_packet", "count": 30, "interval": 0.3 },
-  { "time": 220, "enemy": "emp_virus", "count": 8, "interval": 1.5 },
-  { "time": 240, "enemy": "tank_virus", "count": 10, "interval": 1.5 },
-  { "time": 270, "enemy": "boss_kernel", "count": 2, "interval": 5 }
+  {
+    "id": "railgun_tower",
+    "name": "Railgun Tower",
+    "requires": ["laser_tower", "signal_booster"],
+    "result": {
+      "id": "railgun_tower",
+      "name": "Railgun Tower",
+      "color": "#ffffff",
+      "powerOutput": 0,
+      "powerConsumption": 35,
+      "size": 28,
+      "isDefensive": true,
+      "attackRange": 500,
+      "attackDamage": 120,
+      "attackRate": 0.4,
+      "projectileSpeed": 1200,
+      "projectileColor": "#ffffff"
+    }
+  },
+  {
+    "id": "fortress_wall",
+    "name": "Fortress Wall",
+    "requires": ["wall", "capacitor"],
+    "result": {
+      "id": "fortress_wall",
+      "name": "Fortress Wall",
+      "color": "#00ff44",
+      "powerOutput": 0,
+      "powerConsumption": 0,
+      "size": 28,
+      "isWall": true,
+      "hp": 600
+    }
+  },
+  {
+    "id": "mega_generator",
+    "name": "Mega Generator",
+    "requires": ["generator", "generator"],
+    "result": {
+      "id": "mega_generator",
+      "name": "Mega Generator",
+      "color": "#ffff00",
+      "powerOutput": 80,
+      "powerConsumption": 0,
+      "size": 32
+    }
+  }
 ]

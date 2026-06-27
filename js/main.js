@@ -1,4 +1,4 @@
-import { Game } from './game.js';
+import { Game } from './Game.js';
 
 async function loadJSON(path) {
   const r = await fetch(path);

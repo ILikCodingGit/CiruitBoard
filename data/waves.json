@@ -1,0 +1,18 @@
+[
+  { "time": 0, "enemy": "virus", "count": 5, "interval": 1.5 },
+  { "time": 15, "enemy": "corrupted_packet", "count": 8, "interval": 0.8 },
+  { "time": 30, "enemy": "malware", "count": 4, "interval": 2 },
+  { "time": 45, "enemy": "virus", "count": 12, "interval": 0.8 },
+  { "time": 60, "enemy": "splitter_virus", "count": 5, "interval": 2 },
+  { "time": 75, "enemy": "malware", "count": 8, "interval": 1 },
+  { "time": 90, "enemy": "tank_virus", "count": 3, "interval": 3 },
+  { "time": 105, "enemy": "emp_virus", "count": 4, "interval": 2.5 },
+  { "time": 120, "enemy": "virus", "count": 20, "interval": 0.5 },
+  { "time": 135, "enemy": "tank_virus", "count": 6, "interval": 2 },
+  { "time": 150, "enemy": "splitter_virus", "count": 10, "interval": 1 },
+  { "time": 180, "enemy": "boss_kernel", "count": 1, "interval": 5 },
+  { "time": 200, "enemy": "corrupted_packet", "count": 30, "interval": 0.3 },
+  { "time": 220, "enemy": "emp_virus", "count": 8, "interval": 1.5 },
+  { "time": 240, "enemy": "tank_virus", "count": 10, "interval": 1.5 },
+  { "time": 270, "enemy": "boss_kernel", "count": 2, "interval": 5 }
+]

@@ -1,58 +1,32 @@
 [
   {
-    "id": "pulse_gun",
-    "name": "Pulse Gun",
-    "damage": 12,
-    "fireRate": 4,
-    "projectileSpeed": 420,
-    "projectileSize": 5,
-    "color": "#00ffff",
-    "pierce": 1,
-    "description": "Rapid-fire cyan pulses."
+    "id": "starter_pack",
+    "name": "Starter Kit",
+    "description": "2 wires and a generator",
+    "cards": ["wire", "wire", "generator"]
   },
   {
-    "id": "data_stream",
-    "name": "Data Stream",
-    "damage": 6,
-    "fireRate": 10,
-    "projectileSpeed": 600,
-    "projectileSize": 3,
-    "color": "#ffffff",
-    "pierce": 3,
-    "description": "Fast piercing data packets."
+    "id": "defense_pack",
+    "name": "Defense Bundle",
+    "description": "Walls and a turret",
+    "cards": ["wall", "wall", "turret"]
   },
   {
-    "id": "packet_cannon",
-    "name": "Packet Cannon",
-    "damage": 45,
-    "fireRate": 1,
-    "projectileSpeed": 300,
-    "projectileSize": 12,
-    "color": "#ff9900",
-    "pierce": 1,
-    "description": "Slow but devastating payloads."
+    "id": "power_pack",
+    "name": "Power Surge",
+    "description": "Generator, capacitor, wire",
+    "cards": ["generator", "capacitor", "wire"]
   },
   {
-    "id": "antivirus_beam",
-    "name": "Antivirus Beam",
-    "damage": 20,
-    "fireRate": 2,
-    "projectileSpeed": 700,
-    "projectileSize": 4,
-    "color": "#00ff88",
-    "pierce": 5,
-    "description": "Pierces through virus clusters."
+    "id": "laser_pack",
+    "name": "Laser Array",
+    "description": "Laser tower setup",
+    "cards": ["wire", "generator", "laser_tower"]
   },
   {
-    "id": "firewall_launcher",
-    "name": "Firewall Launcher",
-    "damage": 30,
-    "fireRate": 1.5,
-    "projectileSpeed": 250,
-    "projectileSize": 14,
-    "color": "#ff4444",
-    "pierce": 2,
-    "splash": 60,
-    "description": "Explosive firewall blasts."
+    "id": "boost_pack",
+    "name": "Signal Network",
+    "description": "Booster and turrets",
+    "cards": ["signal_booster", "turret", "turret"]
   }
 ]

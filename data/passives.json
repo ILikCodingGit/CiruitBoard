@@ -1,32 +1,58 @@
 [
   {
-    "id": "starter_pack",
-    "name": "Starter Kit",
-    "description": "2 wires and a generator",
-    "cards": ["wire", "wire", "generator"]
+    "id": "overclock",
+    "name": "Overclock",
+    "description": "+10% move speed",
+    "stat": "moveSpeed",
+    "value": 0.1,
+    "type": "multiply"
   },
   {
-    "id": "defense_pack",
-    "name": "Defense Bundle",
-    "description": "Walls and a turret",
-    "cards": ["wall", "wall", "turret"]
+    "id": "firewall_shield",
+    "name": "Firewall Shield",
+    "description": "+20 max HP",
+    "stat": "maxHp",
+    "value": 20,
+    "type": "add"
   },
   {
-    "id": "power_pack",
-    "name": "Power Surge",
-    "description": "Generator, capacitor, wire",
-    "cards": ["generator", "capacitor", "wire"]
+    "id": "cache_boost",
+    "name": "Cache Boost",
+    "description": "+15% fire rate",
+    "stat": "fireRate",
+    "value": 0.15,
+    "type": "multiply"
   },
   {
-    "id": "laser_pack",
-    "name": "Laser Array",
-    "description": "Laser tower setup",
-    "cards": ["wire", "generator", "laser_tower"]
+    "id": "damage_amp",
+    "name": "Damage Amplifier",
+    "description": "+20% weapon damage",
+    "stat": "damage",
+    "value": 0.2,
+    "type": "multiply"
   },
   {
-    "id": "boost_pack",
-    "name": "Signal Network",
-    "description": "Booster and turrets",
-    "cards": ["signal_booster", "turret", "turret"]
+    "id": "xp_magnet",
+    "name": "XP Magnet",
+    "description": "+40% XP pickup radius",
+    "stat": "pickupRadius",
+    "value": 0.4,
+    "type": "multiply"
+  },
+  {
+    "id": "regen",
+    "name": "Self Repair",
+    "description": "+1 HP/sec regeneration",
+    "stat": "hpRegen",
+    "value": 1,
+    "type": "add"
+  },
+  {
+    "id": "armor",
+    "name": "Hardened Core",
+    "description": "-15% damage taken",
+    "stat": "armor",
+    "value": 0.15,
+    "type": "add"
   }
 ]

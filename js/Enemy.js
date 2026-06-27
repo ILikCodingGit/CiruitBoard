@@ -71,24 +71,19 @@ export class Enemy {
       ctx.lineTo(-s, -s * 0.7);
       ctx.lineTo(-s, s * 0.7);
       ctx.closePath();
-    } 
-    else if (shape === 'diamond') {
+    } else if (shape === 'diamond') {
       ctx.rotate(this.phase * 0.5);
       ctx.beginPath();
       ctx.moveTo(0, -s); ctx.lineTo(s, 0); ctx.lineTo(0, s); ctx.lineTo(-s, 0);
       ctx.closePath();
-    } 
-    else if (shape === 'square') {
+    } else if (shape === 'square') {
       ctx.rotate(this.angle + this.phase * 0.3);
       ctx.beginPath();
       ctx.rect(-s, -s, s * 2, s * 2);
-    } 
-    else if (shape === 'hexagon') 
-    {
+    } else if (shape === 'hexagon') {
       ctx.beginPath();
 
-      for (let i = 0; i < 6; i++) 
-      {
+      for (let i = 0; i < 6; i++) {
         const a = (i / 6) * Math.PI * 2;
 
         if (i === 0)
@@ -102,18 +97,13 @@ export class Enemy {
     else if (shape === 'star') {
       ctx.rotate(this.phase * 0.4);
       ctx.beginPath();
-      for (let i = 0; i < 8; i++) 
-        {
+      for (let i = 0; i < 8; i++) {
         const a = (i / 8) * Math.PI * 2;
         const r = i % 2 === 0 ? s : s * 0.4;
         i === 0 ? ctx.moveTo(Math.cos(a) * r, Math.sin(a) * r) : ctx.lineTo(Math.cos(a) * r, Math.sin(a) * r);
       }
-
-    ctx.closePath();
-
-    } 
-    else 
-    {
+      ctx.closePath();
+    } else {
       ctx.beginPath();
       ctx.arc(0, 0, s, 0, Math.PI * 2);
     }
