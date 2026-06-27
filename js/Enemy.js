@@ -83,8 +83,7 @@ export class Enemy {
     } else if (shape === 'hexagon') {
       for (let i = 0; i < 6; i++) {
         const a = (i / 6) * Math.PI * 2;
-        i === 0 ? ctx.beginPath(), ctx.moveTo(Math.cos(a) * s, Math.sin(a) * s)
-                : ctx.lineTo(Math.cos(a) * s, Math.sin(a) * s);
+        i === 0 ? (ctx.beginPath(), ctx.moveTo(Math.cos(a) * s, Math.sin(a) * s)) : ctx.lineTo(Math.cos(a) * s, Math.sin(a) * s);
       }
       ctx.closePath();
     } else if (shape === 'star') {
