@@ -1,0 +1,49 @@
+[
+  {
+    "id": "railgun_tower",
+    "name": "Railgun Tower",
+    "requires": ["laser_tower", "signal_booster"],
+    "result": {
+      "id": "railgun_tower",
+      "name": "Railgun Tower",
+      "color": "#ffffff",
+      "powerOutput": 0,
+      "powerConsumption": 35,
+      "size": 28,
+      "isDefensive": true,
+      "attackRange": 500,
+      "attackDamage": 120,
+      "attackRate": 0.4,
+      "projectileSpeed": 1200,
+      "projectileColor": "#ffffff"
+    }
+  },
+  {
+    "id": "fortress_wall",
+    "name": "Fortress Wall",
+    "requires": ["wall", "capacitor"],
+    "result": {
+      "id": "fortress_wall",
+      "name": "Fortress Wall",
+      "color": "#00ff44",
+      "powerOutput": 0,
+      "powerConsumption": 0,
+      "size": 28,
+      "isWall": true,
+      "hp": 600
+    }
+  },
+  {
+    "id": "mega_generator",
+    "name": "Mega Generator",
+    "requires": ["generator", "generator"],
+    "result": {
+      "id": "mega_generator",
+      "name": "Mega Generator",
+      "color": "#ffff00",
+      "powerOutput": 80,
+      "powerConsumption": 0,
+      "size": 32
+    }
+  }
+]

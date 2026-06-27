@@ -1,0 +1,87 @@
+[
+  {
+    "id": "virus",
+    "name": "Virus",
+    "health": 20,
+    "speed": 55,
+    "damage": 8,
+    "xp": 2,
+    "color": "#ff2244",
+    "shape": "triangle",
+    "size": 10
+  },
+  {
+    "id": "malware",
+    "name": "Malware",
+    "health": 40,
+    "speed": 70,
+    "damage": 12,
+    "xp": 4,
+    "color": "#ff6600",
+    "shape": "diamond",
+    "size": 12
+  },
+  {
+    "id": "tank_virus",
+    "name": "Tank Virus",
+    "health": 180,
+    "speed": 22,
+    "damage": 25,
+    "xp": 15,
+    "color": "#cc0033",
+    "shape": "hexagon",
+    "size": 22
+  },
+  {
+    "id": "splitter_virus",
+    "name": "Splitter",
+    "health": 50,
+    "speed": 45,
+    "damage": 10,
+    "xp": 6,
+    "color": "#ff44aa",
+    "shape": "square",
+    "size": 13,
+    "onDeath": {
+      "spawn": "virus",
+      "count": 3
+    }
+  },
+  {
+    "id": "emp_virus",
+    "name": "EMP Virus",
+    "health": 65,
+    "speed": 38,
+    "damage": 15,
+    "xp": 10,
+    "color": "#aa00ff",
+    "shape": "star",
+    "size": 14,
+    "special": "emp",
+    "empRadius": 150,
+    "empDuration": 3000
+  },
+  {
+    "id": "corrupted_packet",
+    "name": "Corrupted Packet",
+    "health": 15,
+    "speed": 110,
+    "damage": 5,
+    "xp": 1,
+    "color": "#ff8800",
+    "shape": "triangle",
+    "size": 7
+  },
+  {
+    "id": "boss_kernel",
+    "name": "Kernel Corruptor",
+    "health": 1200,
+    "speed": 30,
+    "damage": 40,
+    "xp": 100,
+    "color": "#ff0055",
+    "shape": "hexagon",
+    "size": 40,
+    "isBoss": true
+  }
+]

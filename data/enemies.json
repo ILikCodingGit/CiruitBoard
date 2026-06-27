@@ -1,0 +1,85 @@
+[
+  {
+    "id": "generator",
+    "name": "Generator",
+    "color": "#00ff88",
+    "powerOutput": 25,
+    "powerConsumption": 0,
+    "size": 24,
+    "description": "Produces 25 power for the network."
+  },
+  {
+    "id": "wire",
+    "name": "Wire",
+    "color": "#00cc66",
+    "powerOutput": 0,
+    "powerConsumption": 0,
+    "size": 24,
+    "isWire": true,
+    "description": "Transmits power between buildings."
+  },
+  {
+    "id": "turret",
+    "name": "Turret",
+    "color": "#44ddff",
+    "powerOutput": 0,
+    "powerConsumption": 10,
+    "size": 24,
+    "isDefensive": true,
+    "attackRange": 180,
+    "attackDamage": 15,
+    "attackRate": 1.5,
+    "projectileSpeed": 350,
+    "projectileColor": "#44ddff",
+    "description": "Shoots nearby enemies. Requires 10 power."
+  },
+  {
+    "id": "laser_tower",
+    "name": "Laser Tower",
+    "color": "#ff44ff",
+    "powerOutput": 0,
+    "powerConsumption": 20,
+    "size": 24,
+    "isDefensive": true,
+    "attackRange": 250,
+    "attackDamage": 40,
+    "attackRate": 0.5,
+    "projectileSpeed": 800,
+    "projectileColor": "#ff44ff",
+    "description": "High damage laser. Requires 20 power."
+  },
+  {
+    "id": "wall",
+    "name": "Wall",
+    "color": "#008844",
+    "powerOutput": 0,
+    "powerConsumption": 0,
+    "size": 24,
+    "isWall": true,
+    "hp": 200,
+    "description": "Blocks enemy movement."
+  },
+  {
+    "id": "capacitor",
+    "name": "Capacitor",
+    "color": "#ffff00",
+    "powerOutput": 0,
+    "powerConsumption": 0,
+    "size": 24,
+    "isCapacitor": true,
+    "storage": 50,
+    "description": "Stores up to 50 excess power."
+  },
+  {
+    "id": "signal_booster",
+    "name": "Signal Booster",
+    "color": "#00ffff",
+    "powerOutput": 0,
+    "powerConsumption": 5,
+    "size": 24,
+    "isBooster": true,
+    "boostRadius": 150,
+    "rangeBonus": 0.4,
+    "description": "Boosts nearby turret range 40%. Requires 5 power."
+  }
+]

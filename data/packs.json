@@ -1,0 +1,58 @@
+[
+  {
+    "id": "pulse_gun",
+    "name": "Pulse Gun",
+    "damage": 12,
+    "fireRate": 4,
+    "projectileSpeed": 420,
+    "projectileSize": 5,
+    "color": "#00ffff",
+    "pierce": 1,
+    "description": "Rapid-fire cyan pulses."
+  },
+  {
+    "id": "data_stream",
+    "name": "Data Stream",
+    "damage": 6,
+    "fireRate": 10,
+    "projectileSpeed": 600,
+    "projectileSize": 3,
+    "color": "#ffffff",
+    "pierce": 3,
+    "description": "Fast piercing data packets."
+  },
+  {
+    "id": "packet_cannon",
+    "name": "Packet Cannon",
+    "damage": 45,
+    "fireRate": 1,
+    "projectileSpeed": 300,
+    "projectileSize": 12,
+    "color": "#ff9900",
+    "pierce": 1,
+    "description": "Slow but devastating payloads."
+  },
+  {
+    "id": "antivirus_beam",
+    "name": "Antivirus Beam",
+    "damage": 20,
+    "fireRate": 2,
+    "projectileSpeed": 700,
+    "projectileSize": 4,
+    "color": "#00ff88",
+    "pierce": 5,
+    "description": "Pierces through virus clusters."
+  },
+  {
+    "id": "firewall_launcher",
+    "name": "Firewall Launcher",
+    "damage": 30,
+    "fireRate": 1.5,
+    "projectileSpeed": 250,
+    "projectileSize": 14,
+    "color": "#ff4444",
+    "pierce": 2,
+    "splash": 60,
+    "description": "Explosive firewall blasts."
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "starter_pack",
+    "name": "Starter Kit",
+    "description": "2 wires and a generator",
+    "cards": ["wire", "wire", "generator"]
+  },
+  {
+    "id": "defense_pack",
+    "name": "Defense Bundle",
+    "description": "Walls and a turret",
+    "cards": ["wall", "wall", "turret"]
+  },
+  {
+    "id": "power_pack",
+    "name": "Power Surge",
+    "description": "Generator, capacitor, wire",
+    "cards": ["generator", "capacitor", "wire"]
+  },
+  {
+    "id": "laser_pack",
+    "name": "Laser Array",
+    "description": "Laser tower setup",
+    "cards": ["wire", "generator", "laser_tower"]
+  },
+  {
+    "id": "boost_pack",
+    "name": "Signal Network",
+    "description": "Booster and turrets",
+    "cards": ["signal_booster", "turret", "turret"]
+  }
+]
