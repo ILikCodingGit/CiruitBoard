@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circuit Board Survival</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #000;
+      overflow: hidden;
+      font-family: 'Courier New', monospace;
+      color: #00ffcc;
+    }
+
+    #loading {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #000;
+      gap: 20px;
+    }
+
+    #loading h1 {
+      font-size: 2.2rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #00ffcc;
+      text-shadow: 0 0 20px #00ffcc, 0 0 40px #00ff88;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    #loading-status {
+      font-size: 0.85rem;
+      color: #00ff88;
+      letter-spacing: 0.1em;
+      opacity: 0.7;
+    }
+
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 2px solid #003322;
+      border-top: 2px solid #00ffcc;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes pulse {
+      0%, 100% { text-shadow: 0 0 20px #00ffcc, 0 0 40px #00ff88; }
+      50% { text-shadow: 0 0 40px #00ffcc, 0 0 80px #00ff88, 0 0 120px #00ffaa; }
+    }
+
+    #controls-hint {
+      font-size: 0.75rem;
+      color: rgba(0,255,136,0.45);
+      letter-spacing: 0.08em;
+      line-height: 1.8;
+      text-align: center;
+    }
+
+    canvas {
+      display: none;
+      position: fixed;
+      inset: 0;
+      cursor: crosshair;
+    }
+  </style>
+</head>
+<body>
+  <div id="loading">
+    <h1>Circuit Board Survival</h1>
+    <div class="spinner"></div>
+    <p id="loading-status">Initializing...</p>
+    <div id="controls-hint">
+      WASD — Move &nbsp;|&nbsp; Mouse — Aim &amp; Shoot &nbsp;|&nbsp; B / Tab — Build Mode<br>
+      Q/E or 1-9 — Select Card &nbsp;|&nbsp; Click — Place Building
+    </div>
+  </div>
+  <canvas id="game"></canvas>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
